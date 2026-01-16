@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "spatial_locking"
+version = "0.1.0"
+description = ""
+authors = ["Petar Mirceski <petar.mirceski1998@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numba = "^0.60.0"
+natsort = "^8.4.0"
+numpy = "^2.0.1"
+matplotlib = "^3.9.1"
+tqdm = "^4.66.4"
+scipy = "^1.14.0"
+jupyterlab = "^4.2.4"
+ipympl = "^0.9.4"
+pre-commit = "^3.7.1"
+scikit-image = "^0.24.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# matplotlib axes __get__ item error ignore for the project
+[tool.pyright]
+reportIndexIssue = false

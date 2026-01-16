@@ -1,0 +1,40 @@
+####### Figure
+figure.figsize: 15, 13
+figure.dpi: 120 # Higher resolution
+
+####### Fonts
+font.family: serif
+font.serif: Computer Modern Roman
+font.size: 38 # Base font size
+
+text.usetex: True
+text.latex.preamble: \usepackage{amsmath} \usepackage{amsfonts} \usepackage{bm} \usepackage{lmodern} \usepackage{siunitx} \sisetup{detect-all} \fontsize{38}{44}\selectfont
+
+####### Axes
+axes.labelsize: 42
+axes.titlesize: 46
+axes.titlepad: 20
+axes.linewidth: 1.6
+axes.grid: False
+
+####### Ticks
+xtick.labelsize: 38
+ytick.labelsize: 38
+xtick.major.size: 10
+xtick.major.width: 1.5
+ytick.major.size: 10
+ytick.major.width: 1.5
+
+####### Lines & Markers
+lines.linewidth: 3.2
+lines.markersize: 6
+
+####### Legend
+legend.fontsize: 28
+legend.frameon: False
+legend.loc: best
+legend.columnspacing: 0.5
+
+####### Savefig
+savefig.bbox: tight
+savefig.pad_inches: 0.1
