@@ -48,8 +48,8 @@ Our findings provide insight into the role of frequency heterogeneity in the for
 
 ### Prerequisites
 
-- Python 3.10+
-- [Poetry](https://python-poetry.org/) (dependency management)
+- Python 3.10–3.12 (numba 0.60 does not support 3.13+; uv installs 3.12 automatically from `.python-version`)
+- [uv](https://docs.astral.sh/uv/) (dependency management)
 
 ### Steps
 
@@ -59,27 +59,26 @@ Our findings provide insight into the role of frequency heterogeneity in the for
     cd spatial_locking
     ```
 
-2. Install dependencies using Poetry:
+2. Install dependencies using uv (creates `.venv` and installs the project with dev tools):
     ```sh
-    poetry install
-    poetry shell
+    uv sync
     ```
 
 ## Usage
 
-After activating the poetry shell, you can run the Jupyter notebooks to reproduce the paper's results:
+You can run the Jupyter notebooks to reproduce the paper's results. Either open the project in VS Code and select the `.venv` interpreter:
 
 ```sh
-poetry shell
-code . 
+code .
 ```
 
-or 
+or start Jupyter Lab through uv:
 
 ```sh
-poetry shell
-jupyter lab 
+uv run jupyter lab
 ```
+
+(Alternatively, activate the environment with `source .venv/bin/activate` and run commands directly.)
 
 ## Notebooks Overview
 
@@ -98,17 +97,12 @@ This project uses pre-commit to maintain code quality and consistency.
 
 Install pre-commit hooks:
 ```sh
-pre-commit install
+uv run pre-commit install
 ```
 
 Run pre-commit hooks manually on all files:
 ```sh
-pre-commit run --all-files
-```
-
-Or without activating the shell:
-```sh
-poetry run pre-commit run --all-files
+uv run pre-commit run --all-files
 ```
 
 ## Citation

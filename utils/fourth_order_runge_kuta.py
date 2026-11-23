@@ -1,5 +1,5 @@
 import math
-from typing import Callable
+from collections.abc import Callable
 
 import numpy as np
 from numba import jit
@@ -67,7 +67,7 @@ def rk_interval(
     state_vector[0] = initial_conditions
     next_state: np.ndarray = initial_conditions.copy()
 
-    for i in range(0, num_points - 1):
+    for i in range(num_points - 1):
         next_state = rk_step(next_state, system, dt)
         state_vector[i + 1] = next_state
 
